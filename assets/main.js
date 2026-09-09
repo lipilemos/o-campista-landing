@@ -21,7 +21,7 @@ const SHARE_TEXT =
 const FORM_ENDPOINT = '';
 
 /** E-mail que recebe os cadastros quando FORM_ENDPOINT está vazio. */
-const FALLBACK_EMAIL = 'contato@ocampista.com.br';
+const FALLBACK_EMAIL = 'lipe.dev@outlook.com.br';
 
 const STORAGE_THEME_KEY = 'ocampista-theme';
 
