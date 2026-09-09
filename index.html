@@ -1,0 +1,850 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>O Campista — Inauguração com sorteio de kit de camping</title>
+    <meta
+      name="description"
+      content="O Campista chegou! Descubra campings no mapa, faça check-in por GPS, veja o clima, deixe presentes e suba de nível. Cadastre-se e concorra a um kit de camping completo."
+    />
+    <meta name="theme-color" content="#6e1217" />
+    <link rel="icon" href="assets/img/favicon.ico" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="O Campista" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content="O Campista chegou — participe do sorteio de inauguração" />
+    <meta
+      property="og:description"
+      content="Sua aventura começa aqui. Descubra, conecte e viva o camping. Cadastre-se e concorra a um kit de camping completo."
+    />
+    <meta property="og:image" content="assets/img/banner.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="O Campista chegou — sorteio de inauguração" />
+    <meta
+      name="twitter:description"
+      content="Mapa de campings, check-in por GPS, clima em tempo real, presentes e conquistas. Participe do sorteio."
+    />
+    <meta name="twitter:image" content="assets/img/banner.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "O Campista",
+        "applicationCategory": "TravelApplication",
+        "operatingSystem": "Android, iOS, Web",
+        "description": "Plataforma para entusiastas de camping: mapa de campings, check-in por geolocalização, clima em tempo real, presentes, trilhas, chat e conquistas.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" }
+      }
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="#topo">
+          <img src="assets/img/logo-transp.png" alt="" width="36" height="36" />
+          O Campista
+        </a>
+
+        <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
+          <ul>
+            <li><a href="#recursos">Recursos</a></li>
+            <li><a href="#telas">Telas do app</a></li>
+            <li><a href="#sorteio">Sorteio</a></li>
+            <li><a href="#baixar">Baixar</a></li>
+            <li><a href="#faq">Dúvidas</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button
+            class="icon-btn nav-toggle"
+            id="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-nav"
+          >
+            <span aria-hidden="true">☰</span>
+            <span class="sr-only">Abrir menu de navegação</span>
+          </button>
+          <button class="icon-btn" id="theme-toggle" type="button">
+            <span aria-hidden="true" id="theme-icon">🌙</span>
+            <span class="sr-only" id="theme-label">Ativar tema escuro</span>
+          </button>
+          <a class="btn btn--primary btn--sm" href="#sorteio">Participar do sorteio</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <!-- ============================================================ Hero -->
+      <section class="hero" id="topo">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <img
+              class="hero-logo"
+              src="assets/img/logo-transp.png"
+              alt="Logotipo do O Campista"
+              width="96"
+              height="96"
+            />
+            <p class="badge-launch"><span aria-hidden="true">🏕️</span> Inauguração oficial</p>
+            <h1>O Campista chegou.<br />E abriu com sorteio.</h1>
+            <p class="hero-tagline">
+              Sua aventura começa aqui. Descubra, conecte e viva o camping.
+            </p>
+            <p class="hero-lead">
+              Mapa de campings do Brasil inteiro, check-in por GPS, clima em tempo real, presentes
+              escondidos, trilhas e conquistas — tudo em um app só. Para comemorar a estreia,
+              sorteamos um kit de camping completo entre os primeiros campistas cadastrados.
+            </p>
+            <div class="hero-ctas">
+              <a class="btn btn--primary" href="#sorteio">Quero participar do sorteio</a>
+              <a class="btn btn--ghost" href="#telas">Ver as telas do app</a>
+            </div>
+            <p class="hero-note">
+              <span aria-hidden="true">🎁</span> Grátis para participar · sem compromisso de compra
+            </p>
+          </div>
+
+          <div class="hero-phones">
+            <!-- Mockup: Mapa -->
+            <div
+              class="phone-frame"
+              role="img"
+              aria-label="Tela do mapa do O Campista com campings próximos e o botão Fazer Check-in"
+            >
+              <div class="phone-screen" aria-hidden="true">
+                <div class="mk-status"><span>9:41</span><span>▮▮▮ 📶</span></div>
+                <div class="mk-map">
+                  <span class="mk-pin" style="top: 26%; left: 24%">🏕️</span>
+                  <span class="mk-pin" style="top: 40%; left: 66%">🏕️</span>
+                  <span class="mk-pin" style="top: 62%; left: 34%">🎁</span>
+                  <span class="mk-pin" style="top: 18%; left: 72%">💧</span>
+                  <span class="mk-pin mk-pin--me" style="top: 50%; left: 50%"></span>
+                  <div class="mk-sheet">
+                    <div class="mk-row">
+                      <div>
+                        <p class="mk-title" style="margin: 0">Camping Pedra Grande</p>
+                        <p class="mk-sub" style="margin: 0">⭐ 4,8 · 180 m de você</p>
+                      </div>
+                      <span class="mk-badge mk-badge--ok">Tranquilo</span>
+                    </div>
+                    <p class="mk-sub" style="margin: 6px 0">
+                      12 pessoas fizeram check-in nas últimas 24h
+                    </p>
+                    <span class="mk-btn">Fazer Check-in</span>
+                  </div>
+                </div>
+                <div class="mk-tabbar">
+                  <span aria-current="page">🗺️</span><span>💬</span><span>✅</span><span>🏆</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mockup: Clima -->
+            <div
+              class="phone-frame"
+              role="img"
+              aria-label="Tela de clima do O Campista indicando condição excelente para acampar"
+            >
+              <div class="phone-screen" aria-hidden="true">
+                <div class="mk-status"><span>9:41</span><span>▮▮▮ 📶</span></div>
+                <div class="mk-topbar">
+                  <span class="mk-avatar">🏕️</span>
+                  <span>Serra do Cipó<small>Hoje, quinta-feira</small></span>
+                </div>
+                <div class="mk-body">
+                  <div class="mk-card mk-weather">
+                    <div class="mk-row">
+                      <div>
+                        <p class="mk-title" style="margin: 0">Condição para Acampamento</p>
+                        <p class="mk-sub" style="margin: 0">Excelente para acampar</p>
+                      </div>
+                      <span style="font-size: 26px">☀️</span>
+                    </div>
+                    <p class="mk-temp" style="margin: 8px 0 0">24°</p>
+                  </div>
+                  <div class="mk-card">
+                    <div class="mk-row">
+                      <span class="mk-sub">💧 Umidade 58%</span>
+                      <span class="mk-sub">💨 12 km/h</span>
+                      <span class="mk-sub">🌧️ 10%</span>
+                    </div>
+                  </div>
+                  <p class="mk-title" style="margin: 0">📅 Próximos 3 dias</p>
+                  <div class="mk-forecast">
+                    <div><b>Sex</b>☀️ 26°/15°</div>
+                    <div><b>Sáb</b>⛅ 23°/14°</div>
+                    <div><b>Dom</b>🌧️ 19°/13°</div>
+                  </div>
+                </div>
+                <div class="mk-tabbar">
+                  <span>🗺️</span><span>💬</span><span>✅</span><span aria-current="page">🏆</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================== Promessas -->
+      <section class="promise-strip" aria-label="Destaques do aplicativo">
+        <div class="container">
+          <ul class="promise-list">
+            <li><span class="emoji" aria-hidden="true">📍</span> Check-in validado por GPS</li>
+            <li>
+              <span class="emoji" aria-hidden="true">🌤️</span> Clima do camping, não da cidade
+            </li>
+            <li>
+              <span class="emoji" aria-hidden="true">🎁</span> Presentes escondidos na natureza
+            </li>
+            <li><span class="emoji" aria-hidden="true">🏆</span> XP, níveis e conquistas reais</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ======================================================= Recursos -->
+      <section class="section" id="recursos">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">O que você encontra no app</p>
+            <h2>Do planejamento ao check-in, tudo em um lugar</h2>
+            <p>
+              Cada funcionalidade foi pensada para quem acampa de verdade — nada de app genérico de
+              viagem.
+            </p>
+          </div>
+
+          <div class="features-grid">
+            <article class="feature-card card-elevated reveal">
+              <p class="emoji" aria-hidden="true">🗺️</p>
+              <h3>Mapa interativo</h3>
+              <p>
+                Descubra campings, cachoeiras e mirantes no mapa, com avaliações, recursos
+                disponíveis e localização exata antes de partir.
+              </p>
+            </article>
+
+            <article class="feature-card card-elevated reveal">
+              <p class="emoji" aria-hidden="true">📍</p>
+              <h3>Check-in por geolocalização</h3>
+              <p>
+                Chegou? O app confirma sua presença por GPS num raio de 250 m. Cada check-in vira XP
+                e desbloqueia conquistas.
+              </p>
+            </article>
+
+            <article class="feature-card card-elevated reveal">
+              <p class="emoji" aria-hidden="true">⭐</p>
+              <h3>Avaliações reais</h3>
+              <p>
+                Notas, comentários e fotos de campistas que estiveram lá de verdade — sem filtro,
+                sem patrocínio.
+              </p>
+            </article>
+
+            <article class="feature-card card-elevated reveal">
+              <p class="emoji" aria-hidden="true">🌤️</p>
+              <h3>Clima em tempo real</h3>
+              <p>
+                Temperatura, umidade, vento e previsão do camping, com o veredito automático:
+                Excelente, Atenção ou Ruim para acampar.
+              </p>
+            </article>
+
+            <article class="feature-card card-elevated reveal">
+              <p class="emoji" aria-hidden="true">🎁</p>
+              <h3>Presentes escondidos</h3>
+              <p>
+                Deixe um presente real com foto para outro campista encontrar. Quem chegar a 150 m
+                resgata com um código.
+              </p>
+            </article>
+
+            <article class="feature-card card-elevated reveal">
+              <p class="emoji" aria-hidden="true">💬</p>
+              <h3>Chat do camping e grupos</h3>
+              <p>
+                Sala exclusiva de cada camping liberada pelo check-in, mais grupos privados com
+                convite por código para planejar a viagem.
+              </p>
+            </article>
+
+            <article class="feature-card card-elevated reveal">
+              <p class="emoji" aria-hidden="true">✅</p>
+              <h3>Checklist de preparação</h3>
+              <p>
+                Roupas, cozinha, segurança, higiene: o checklist acompanha seu progresso e funciona
+                mesmo sem internet.
+              </p>
+            </article>
+
+            <article class="feature-card card-elevated reveal">
+              <p class="emoji" aria-hidden="true">🥾</p>
+              <h3>Trilhas e conquistas</h3>
+              <p>
+                Grave trilhas por GPS, avalie percursos, suba de nível e colecione conquistas a cada
+                aventura registrada.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================== Telas -->
+      <section class="section screens" id="telas">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Por dentro do app</p>
+            <h2>É assim que O Campista funciona</h2>
+            <p>Seis telas que resumem a experiência, do mapa ao troféu.</p>
+          </div>
+
+          <div class="screens-rail custom-scrollbar">
+            <!-- 1. Mapa -->
+            <figure class="screen-item reveal">
+              <div class="phone-frame">
+                <div class="phone-screen" aria-hidden="true">
+                  <div class="mk-status"><span>9:41</span><span>▮▮▮ 📶</span></div>
+                  <div class="mk-map">
+                    <span class="mk-pin" style="top: 22%; left: 28%">🏕️</span>
+                    <span class="mk-pin" style="top: 36%; left: 70%">🏕️</span>
+                    <span class="mk-pin" style="top: 58%; left: 22%">💧</span>
+                    <span class="mk-pin" style="top: 70%; left: 62%">🥾</span>
+                    <span class="mk-pin mk-pin--me" style="top: 48%; left: 48%"></span>
+                    <div class="mk-sheet">
+                      <div class="mk-row">
+                        <span class="mk-title">Campings próximos</span>
+                        <span class="mk-badge mk-badge--warn">Movimentado</span>
+                      </div>
+                      <p class="mk-sub" style="margin: 6px 0 0">📍 Minha localização</p>
+                    </div>
+                  </div>
+                  <div class="mk-tabbar">
+                    <span aria-current="page">🗺️</span><span>💬</span><span>✅</span><span>🏆</span>
+                  </div>
+                </div>
+              </div>
+              <figcaption>
+                <strong>Mapa interativo</strong>
+                <span>Campings, trilhas e presentes ao seu redor, com status de ocupação.</span>
+              </figcaption>
+            </figure>
+
+            <!-- 2. Check-in -->
+            <figure class="screen-item reveal">
+              <div class="phone-frame">
+                <div class="phone-screen" aria-hidden="true">
+                  <div class="mk-status"><span>9:41</span><span>▮▮▮ 📶</span></div>
+                  <div class="mk-topbar">
+                    <span class="mk-avatar">🏕️</span>
+                    <span>Camping Pedra Grande<small>180 m de você</small></span>
+                  </div>
+                  <div class="mk-body">
+                    <div class="mk-success">✅ Check-in realizado com sucesso!</div>
+                    <div class="mk-card">
+                      <div class="mk-row">
+                        <span class="mk-title">Nível 7 · Aventureiro</span>
+                        <span class="mk-sub">+150 XP</span>
+                      </div>
+                      <div class="mk-xp-bar" style="margin-top: 8px"><i></i></div>
+                    </div>
+                    <p class="mk-title" style="margin: 0">Como está o camping agora?</p>
+                    <div class="mk-row">
+                      <span class="mk-badge mk-badge--ok">Tranquilo</span>
+                      <span class="mk-badge mk-badge--warn">Movimentado</span>
+                      <span class="mk-badge mk-badge--err">Lotado</span>
+                    </div>
+                    <span class="mk-btn">Confirmar</span>
+                  </div>
+                  <div class="mk-tabbar">
+                    <span aria-current="page">🗺️</span><span>💬</span><span>✅</span><span>🏆</span>
+                  </div>
+                </div>
+              </div>
+              <figcaption>
+                <strong>Check-in por GPS</strong>
+                <span>Presença validada a 250 m, XP na hora e status de ocupação reportado.</span>
+              </figcaption>
+            </figure>
+
+            <!-- 3. Clima -->
+            <figure class="screen-item reveal">
+              <div class="phone-frame">
+                <div class="phone-screen" aria-hidden="true">
+                  <div class="mk-status"><span>9:41</span><span>▮▮▮ 📶</span></div>
+                  <div class="mk-topbar">
+                    <span class="mk-avatar">🌤️</span>
+                    <span>Serra do Cipó<small>Condições de hoje</small></span>
+                  </div>
+                  <div class="mk-body">
+                    <div class="mk-card mk-weather">
+                      <div class="mk-row">
+                        <div>
+                          <p class="mk-title" style="margin: 0">Condição para Acampamento</p>
+                          <p class="mk-sub" style="margin: 0">Excelente para acampar</p>
+                        </div>
+                        <span style="font-size: 26px">☀️</span>
+                      </div>
+                      <p class="mk-temp" style="margin: 8px 0 0">24°</p>
+                    </div>
+                    <div class="mk-card">
+                      <div class="mk-row">
+                        <span class="mk-sub">💧 58%</span>
+                        <span class="mk-sub">💨 12 km/h</span>
+                        <span class="mk-sub">🌧️ 10%</span>
+                      </div>
+                    </div>
+                    <p class="mk-title" style="margin: 0">📅 Próximos 3 dias</p>
+                    <div class="mk-forecast">
+                      <div><b>Sex</b>☀️ 26°</div>
+                      <div><b>Sáb</b>⛅ 23°</div>
+                      <div><b>Dom</b>🌧️ 19°</div>
+                    </div>
+                  </div>
+                  <div class="mk-tabbar">
+                    <span>🗺️</span><span>💬</span><span>✅</span><span aria-current="page">🏆</span>
+                  </div>
+                </div>
+              </div>
+              <figcaption>
+                <strong>Clima do camping</strong>
+                <span>Excelente, Atenção ou Ruim — o app indica a melhor data para ir.</span>
+              </figcaption>
+            </figure>
+
+            <!-- 4. Presente -->
+            <figure class="screen-item reveal">
+              <div class="phone-frame">
+                <div class="phone-screen" aria-hidden="true">
+                  <div class="mk-status"><span>9:41</span><span>▮▮▮ 📶</span></div>
+                  <div class="mk-topbar">
+                    <span class="mk-avatar">🎁</span>
+                    <span>Deixar um Presente<small>Marque a localização</small></span>
+                  </div>
+                  <div class="mk-body">
+                    <div class="mk-photo">🎁</div>
+                    <div class="mk-card">
+                      <p class="mk-title" style="margin: 0">🎁 Presente escondido</p>
+                      <p class="mk-sub" style="margin: 4px 0 0">
+                        Caneca esmaltada — a 90 m de você
+                      </p>
+                    </div>
+                    <span class="mk-btn">Resgatar presente</span>
+                    <span class="mk-btn mk-btn--outline">Navegar até</span>
+                  </div>
+                  <div class="mk-tabbar">
+                    <span>🗺️</span><span>💬</span><span>✅</span><span aria-current="page">🏆</span>
+                  </div>
+                </div>
+              </div>
+              <figcaption>
+                <strong>Presentes na natureza</strong>
+                <span>Esconda um presente real; quem chegar a 150 m pode resgatar.</span>
+              </figcaption>
+            </figure>
+
+            <!-- 5. Chat -->
+            <figure class="screen-item reveal">
+              <div class="phone-frame">
+                <div class="phone-screen" aria-hidden="true">
+                  <div class="mk-status"><span>9:41</span><span>▮▮▮ 📶</span></div>
+                  <div class="mk-topbar">
+                    <span class="mk-avatar">💬</span>
+                    <span>Camping Pedra Grande<small>online · 8 campistas</small></span>
+                  </div>
+                  <div class="mk-chat">
+                    <div class="mk-msg">
+                      <b>Marina</b>Alguém sabe se a trilha da cachoeira está aberta?
+                    </div>
+                    <div class="mk-msg mk-msg--me">Está sim! Passei hoje cedo, tranquila 🥾</div>
+                    <div class="mk-msg"><b>Rafa</b>Vamos fazer fogueira às 19h, colem 🔥</div>
+                    <p class="mk-typing" style="margin: 0">Marina está digitando...</p>
+                  </div>
+                  <div class="mk-input"><span>Mensagem</span><span>➤</span></div>
+                  <div class="mk-tabbar">
+                    <span>🗺️</span><span aria-current="page">💬</span><span>✅</span><span>🏆</span>
+                  </div>
+                </div>
+              </div>
+              <figcaption>
+                <strong>Chat de quem está lá</strong>
+                <span
+                  >Sala do camping liberada pelo check-in, mais grupos privados por convite.</span
+                >
+              </figcaption>
+            </figure>
+
+            <!-- 6. Conquistas -->
+            <figure class="screen-item reveal">
+              <div class="phone-frame">
+                <div class="phone-screen" aria-hidden="true">
+                  <div class="mk-status"><span>9:41</span><span>▮▮▮ 📶</span></div>
+                  <div class="mk-topbar">
+                    <span class="mk-avatar">🧑</span>
+                    <span>Lucas Andrade<small>Nível 7 · Aventureiro</small></span>
+                  </div>
+                  <div class="mk-body">
+                    <div class="mk-toast">🏆 Conquista Desbloqueada!</div>
+                    <div class="mk-stats">
+                      <div><b>23</b><span>Check-ins</span></div>
+                      <div><b>11</b><span>Campings</span></div>
+                      <div><b>6</b><span>Trilhas</span></div>
+                    </div>
+                    <p class="mk-title" style="margin: 0">🏆 Conquistas</p>
+                    <div class="mk-achievements">
+                      <div>🏕️</div>
+                      <div>🥾</div>
+                      <div>🎁</div>
+                      <div>⭐</div>
+                      <div class="is-locked">🔒</div>
+                      <div class="is-locked">🔒</div>
+                    </div>
+                  </div>
+                  <div class="mk-tabbar">
+                    <span>🗺️</span><span>💬</span><span>✅</span><span aria-current="page">🏆</span>
+                  </div>
+                </div>
+              </div>
+              <figcaption>
+                <strong>Gamificação de verdade</strong>
+                <span>XP, níveis e conquistas que só sobem quando você acampa mesmo.</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================== Sorteio -->
+      <section class="section giveaway" id="sorteio">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Promoção de inauguração</p>
+            <h2>Um kit de camping completo vai sair na estreia</h2>
+            <p>
+              Cadastre-se para acompanhar o lançamento e entrar automaticamente no sorteio de
+              inauguração.
+            </p>
+          </div>
+
+          <div class="giveaway-grid">
+            <div class="reveal">
+              <h3>Como participar</h3>
+              <ol class="steps">
+                <li>
+                  <div>
+                    <strong>Cadastre seu e-mail aqui</strong>
+                    <span>Leva 10 segundos e garante seu lugar na lista de espera.</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>Baixe o app no dia do lançamento</strong>
+                    <span>Você recebe o link antes de todo mundo, por e-mail.</span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>Faça seu primeiro check-in</strong>
+                    <span>Check-in validado por GPS confirma sua participação no sorteio.</span>
+                  </div>
+                </li>
+              </ol>
+
+              <div class="prize">
+                <p>
+                  <strong>🎒 O prêmio:</strong> barraca para 2 pessoas, saco de dormir, lampião, kit
+                  de cozinha de campanha e destaque de campista fundador no perfil.
+                </p>
+              </div>
+              <!-- TODO: substituir pelo link do regulamento oficial do sorteio -->
+              <p class="hero-note" style="margin-top: var(--space-4)">
+                <span aria-hidden="true">📄</span> Regulamento completo enviado por e-mail no
+                lançamento.
+              </p>
+            </div>
+
+            <div class="form-card reveal">
+              <h3>Entrar na lista e concorrer</h3>
+              <p>Sem spam. Só o aviso do lançamento e o resultado do sorteio.</p>
+
+              <form id="waitlist-form" novalidate>
+                <div class="field">
+                  <label for="nome">Seu nome</label>
+                  <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    autocomplete="name"
+                    placeholder="Como podemos te chamar?"
+                    aria-describedby="erro-nome"
+                  />
+                  <span class="field-error" id="erro-nome"></span>
+                </div>
+
+                <div class="field">
+                  <label for="email">Seu melhor e-mail</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    autocomplete="email"
+                    placeholder="voce@email.com"
+                    aria-describedby="erro-email"
+                  />
+                  <span class="field-error" id="erro-email"></span>
+                </div>
+
+                <div class="checkbox">
+                  <input type="checkbox" id="aceite" name="aceite" aria-describedby="erro-aceite" />
+                  <label for="aceite" style="font-weight: 500">
+                    Aceito receber e-mails sobre o lançamento e o sorteio e concordo com o uso dos
+                    meus dados para essa finalidade.
+                  </label>
+                </div>
+                <span class="field-error" id="erro-aceite"></span>
+
+                <button class="btn btn--primary btn--block" type="submit">
+                  Quero concorrer ao kit 🎒
+                </button>
+
+                <p class="form-note">
+                  Seus dados são usados apenas para o lançamento e o sorteio. Você pode pedir a
+                  exclusão a qualquer momento.
+                </p>
+              </form>
+
+              <div id="form-feedback" role="status" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================= Download -->
+      <section class="section" id="baixar">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Disponibilidade</p>
+            <h2>Baixe assim que abrir</h2>
+            <p>
+              O app está em fase final de publicação nas lojas. Entre na lista e receba o link no
+              primeiro dia.
+            </p>
+          </div>
+
+          <div class="store-badges reveal">
+            <!-- TODO: trocar por links reais das lojas quando o app for publicado -->
+            <span class="store-badge">
+              <span class="emoji" aria-hidden="true">🤖</span>
+              <span><small>Em breve na</small>Google Play</span>
+              <span class="soon">Em breve</span>
+            </span>
+            <span class="store-badge">
+              <span class="emoji" aria-hidden="true">🍎</span>
+              <span><small>Em breve na</small>App Store</span>
+              <span class="soon">Em breve</span>
+            </span>
+          </div>
+
+          <p class="download-note">
+            Enquanto isso, <a href="#sorteio">cadastre-se na lista de espera</a> e garanta sua vaga
+            no sorteio.
+          </p>
+        </div>
+      </section>
+
+      <!-- =================================================== Compartilhar -->
+      <section class="section share" id="compartilhar">
+        <div class="container">
+          <div class="share-grid">
+            <div class="reveal">
+              <p class="eyebrow">Espalhe a novidade</p>
+              <h2>Chame a galera para acampar junto</h2>
+              <p>
+                Quanto mais campistas na comunidade, melhores as avaliações, os presentes e as
+                trilhas. Compartilhe a inauguração:
+              </p>
+              <div class="share-buttons">
+                <button class="btn btn--outline" type="button" data-share="whatsapp">
+                  <span aria-hidden="true">💬</span> WhatsApp
+                </button>
+                <button class="btn btn--outline" type="button" data-share="telegram">
+                  <span aria-hidden="true">✈️</span> Telegram
+                </button>
+                <button class="btn btn--outline" type="button" data-share="x">
+                  <span aria-hidden="true">🐦</span> X
+                </button>
+                <button class="btn btn--primary" type="button" id="copy-link">
+                  <span aria-hidden="true">🔗</span> Copiar link
+                </button>
+              </div>
+            </div>
+
+            <div class="share-preview reveal">
+              <img
+                src="assets/img/banner.jpg"
+                alt="Banner do O Campista usado nas publicações de divulgação"
+                width="1024"
+                height="338"
+                loading="lazy"
+              />
+              <div class="share-preview-meta">
+                <strong>O Campista chegou — sorteio de inauguração</strong>
+                <span>Sua aventura começa aqui. Descubra, conecte e viva o camping.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ FAQ -->
+      <section class="section" id="faq">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Dúvidas frequentes</p>
+            <h2>Antes de armar a barraca</h2>
+          </div>
+
+          <div class="faq-list">
+            <details>
+              <summary>O app é gratuito?</summary>
+              <p>
+                Sim. Criar conta, usar o mapa, fazer check-in e participar da comunidade é grátis.
+              </p>
+            </details>
+            <details>
+              <summary>Como funciona o check-in?</summary>
+              <p>
+                O app usa o GPS do celular: você precisa estar a no máximo 250 metros do camping
+                para confirmar o check-in. Isso evita gamificação falsa e garante que as informações
+                da comunidade venham de quem realmente esteve lá.
+              </p>
+            </details>
+            <details>
+              <summary>Preciso de internet no camping?</summary>
+              <p>
+                Para mapa, chat e clima, sim. O checklist de preparação fica salvo no seu aparelho e
+                funciona offline.
+              </p>
+            </details>
+            <details>
+              <summary>Como funciona o sistema de presentes?</summary>
+              <p>
+                Você esconde um objeto real no camping, tira uma foto e marca a localização. Outro
+                campista que chegar a menos de 150 metros pode resgatar usando o código.
+              </p>
+            </details>
+            <details>
+              <summary>Quando o app é lançado?</summary>
+              <p>
+                Está em fase final de publicação nas lojas. Quem estiver na lista de espera recebe o
+                link no primeiro dia — e entra no sorteio.
+              </p>
+            </details>
+            <details>
+              <summary>Como participo do sorteio de inauguração?</summary>
+              <p>
+                Cadastre seu e-mail nesta página, baixe o app no lançamento e faça o primeiro
+                check-in. O regulamento completo é enviado por e-mail.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <p class="brand">
+              <img src="assets/img/logo-transp.png" alt="" width="36" height="36" loading="lazy" />
+              O Campista
+            </p>
+            <p>
+              Plataforma para entusiastas de camping e vida ao ar livre. Do planejamento ao
+              check-in, tudo em um lugar.
+            </p>
+            <!-- TODO: substituir href="#" pelos perfis reais das redes sociais -->
+            <div class="social-links">
+              <a href="#" aria-label="Instagram do O Campista">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.3-.1 1.7-.1 4.9-.1zm0 3.4a6.4 6.4 0 1 0 0 12.8 6.4 6.4 0 0 0 0-12.8zm0 10.6a4.2 4.2 0 1 1 0-8.4 4.2 4.2 0 0 1 0 8.4zm8.2-10.9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"
+                  />
+                </svg>
+              </a>
+              <a href="#" aria-label="TikTok do O Campista">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M16.5 3c.4 2.2 1.7 3.6 3.9 3.8v2.5c-1.4.1-2.7-.3-4-1v6.1c0 4.2-3.6 7-7.3 5.8-2.6-.8-4.1-3.3-3.9-5.9.2-2.6 2.3-4.7 4.9-5 .5-.1 1 0 1.5.1v2.7c-.4-.1-.8-.2-1.2-.1-1.4.1-2.5 1.3-2.4 2.7.1 1.4 1.3 2.5 2.7 2.4 1.3-.1 2.3-1.2 2.3-2.5V3h3.5z"
+                  />
+                </svg>
+              </a>
+              <a href="#" aria-label="YouTube do O Campista">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M23 12s0-3.4-.4-5c-.2-.9-.9-1.6-1.8-1.8C19.1 4.8 12 4.8 12 4.8s-7.1 0-8.8.4c-.9.2-1.6.9-1.8 1.8C1 8.6 1 12 1 12s0 3.4.4 5c.2.9.9 1.6 1.8 1.8 1.7.4 8.8.4 8.8.4s7.1 0 8.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-5 .4-5zM9.8 15.3V8.7l6 3.3-6 3.3z"
+                  />
+                </svg>
+              </a>
+              <a href="#" aria-label="Perfil do O Campista no X">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M17.5 3h3.2l-7 8 8.2 10h-6.4l-5-6.1-5.8 6.1H1.5l7.5-8.6L1.2 3h6.6l4.5 5.6L17.5 3zm-1.1 16.1h1.8L7.7 4.8H5.8l10.6 14.3z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h3>Navegar</h3>
+            <ul>
+              <li><a href="#recursos">Recursos</a></li>
+              <li><a href="#telas">Telas do app</a></li>
+              <li><a href="#sorteio">Sorteio de inauguração</a></li>
+              <li><a href="#baixar">Baixar o app</a></li>
+              <li><a href="#faq">Dúvidas frequentes</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Legal</h3>
+            <!-- TODO: apontar para as URLs públicas de /termos e /privacidade do app -->
+            <ul>
+              <li><a href="#">Termos de uso</a></li>
+              <li><a href="#">Política de privacidade</a></li>
+              <li><a href="#">Regulamento do sorteio</a></li>
+              <li><a href="#sorteio">Contato</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>© <span id="ano">2026</span> O Campista. Todos os direitos reservados.</span>
+          <span>Feito para quem ama dormir ouvindo o barulho do mato. 🏕️</span>
+        </div>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+    <script src="assets/main.js"></script>
+  </body>
+</html>
