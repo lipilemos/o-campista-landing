@@ -52,13 +52,19 @@ com os dados preenchidos. Para receber os cadastros de forma automática, crie u
 
 ## Publicar
 
-A pasta é autocontida: qualquer host de estático serve.
+O site está no ar pelo **GitHub Pages**, servido da branch `main` na raiz do repositório:
 
-- **Netlify** — arraste a pasta `landing/` em app.netlify.com/drop, ou conecte o repositório com
-  _publish directory_ = `landing`
-- **Vercel** — `vercel --cwd landing`
-- **GitHub Pages** — publique a pasta `landing/` numa branch `gh-pages`, ou mova o conteúdo para
-  `docs/` e aponte o Pages para lá
+**https://lipilemos.github.io/o-campista-landing/**
+
+Cada push na `main` republica automaticamente — não há build, os arquivos vão como estão.
+O `.nojekyll` desliga o processamento Jekyll do Pages.
+
+Para apontar um domínio próprio: crie os registros DNS no registrador, adicione o domínio em
+_Settings → Pages → Custom domain_ e atualize `SITE_URL` em `assets/main.js` e as tags
+`canonical`/`og:url`/`og:image`/`twitter:image` em `index.html`.
+
+A pasta é autocontida, então qualquer outro host de estático também serve
+(Netlify: arraste a pasta em app.netlify.com/drop; Vercel: `vercel`).
 
 ## Trocar os mockups por prints reais
 

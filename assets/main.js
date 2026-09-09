@@ -3,8 +3,12 @@
    Vanilla JS, sem dependências. Ajuste as constantes abaixo antes de publicar.
    ========================================================================== */
 
-/** URL pública final do site (usada nos botões de compartilhamento). */
-const SITE_URL = 'https://ocampista.com.br';
+/**
+ * URL pública final do site (usada nos botões de compartilhamento e nas OG tags).
+ * Ao apontar um domínio próprio para o GitHub Pages, troque por ele e atualize
+ * og:url, og:image, twitter:image e canonical no index.html.
+ */
+const SITE_URL = 'https://lipilemos.github.io/o-campista-landing/';
 
 /** Texto usado ao compartilhar nas redes. */
 const SHARE_TEXT =
