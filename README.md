@@ -1,14 +1,15 @@
 # Landing de inauguração — O Campista
 
-Site estático de página única para divulgar o lançamento do app e o sorteio de inauguração.
-HTML, CSS e JS puros — **sem build, sem dependências**.
+Site estático para divulgar o lançamento do app e o sorteio de inauguração (`index.html`), mais uma
+página para donos de camping (`parceiros.html`). HTML, CSS e JS puros — **sem build, sem dependências**.
 
 ```
 landing/
-├── index.html
+├── index.html       # inauguração + sorteio (lista de espera)
+├── parceiros.html   # página para donos de camping (benefícios + CTA para o cadastro no app)
 ├── assets/
 │   ├── styles.css   # tokens copiados de src/styles.scss (mesma identidade do app)
-│   ├── main.js      # tema, menu, formulário, compartilhamento, animações
+│   ├── main.js      # tema, menu, formulário, compartilhamento, animações, links do app
 │   └── img/         # logo, background, banner e favicon (cópias de public/)
 └── README.md
 ```
@@ -28,12 +29,13 @@ Tudo que precisa de valor real está marcado com `TODO` no HTML ou agrupado no t
 
 **`assets/main.js`**
 
-| Constante        | O que é                                                             |
-| ---------------- | ------------------------------------------------------------------- |
-| `SITE_URL`       | URL pública final do site — usada nos botões de compartilhamento    |
-| `SHARE_TEXT`     | Texto que acompanha o link nas redes                                |
-| `FORM_ENDPOINT`  | URL que recebe o cadastro (Formspree, Google Form, backend próprio) |
-| `FALLBACK_EMAIL` | E-mail usado no `mailto:` quando `FORM_ENDPOINT` está vazio         |
+| Constante        | O que é                                                                                  |
+| ---------------- | ---------------------------------------------------------------------------------------- |
+| `SITE_URL`       | URL pública final do site — usada nos botões de compartilhamento                         |
+| `SHARE_TEXT`     | Texto que acompanha o link nas redes                                                     |
+| `FORM_ENDPOINT`  | URL que recebe o cadastro (Formspree, Google Form, backend próprio)                      |
+| `FALLBACK_EMAIL` | E-mail usado no `mailto:` quando `FORM_ENDPOINT` está vazio                              |
+| `APP_URL`        | URL pública do app Angular — alvo dos botões "Cadastrar meu camping" em `parceiros.html` |
 
 **`index.html`** (procure por `TODO`)
 
@@ -42,6 +44,13 @@ Tudo que precisa de valor real está marcado com `TODO` no HTML ou agrupado no t
 class="store-badge">` por um `<a href="...">` e remova o selo `.soon`
 - Links legais do rodapé: apontar para as URLs públicas de `/termos` e `/privacidade` do app
 - Regulamento do sorteio (texto oficial) e o conteúdo do prêmio na seção `#sorteio`
+
+## Página de parceiros (`parceiros.html`)
+
+Página de benefícios para donos de campings e pesqueiros. Não tem formulário: todos os botões
+"Cadastrar meu camping" usam `data-app-path="/parceiros/cadastrar"` e `main.js` monta o link final
+com `APP_URL` (por padrão `http://localhost:4200`). Ao publicar o app, troque `APP_URL` pela URL
+pública. O mockup do painel usa os mesmos textos das chaves `parceiro.meu-camping.*` do app.
 
 ## Lista de espera sem backend
 
