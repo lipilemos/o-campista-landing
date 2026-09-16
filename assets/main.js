@@ -23,6 +23,9 @@ const FORM_ENDPOINT = '';
 /** E-mail que recebe os cadastros quando FORM_ENDPOINT está vazio. */
 const FALLBACK_EMAIL = 'lipe.dev@outlook.com.br';
 
+/** URL pública do app (usada pelos CTAs da página de parceiros). */
+const APP_URL = 'http://localhost:4200';
+
 const STORAGE_THEME_KEY = 'ocampista-theme';
 
 /* ------------------------------------------------------------------ Tema */
@@ -62,6 +65,12 @@ themeToggle.addEventListener('click', () => {
 });
 
 initTheme();
+
+/* --------------------------------------------------------- Links do app */
+
+document.querySelectorAll('[data-app-path]').forEach((link) => {
+  link.setAttribute('href', APP_URL.replace(/\/$/, '') + link.dataset.appPath);
+});
 
 /* ---------------------------------------------------------- Menu mobile */
 
@@ -105,92 +114,98 @@ function showToast(message) {
 /* ------------------------------------------------- Formulário do sorteio */
 
 const form = document.getElementById('waitlist-form');
-const feedback = document.getElementById('form-feedback');
 
-const fields = {
-  nome: { input: document.getElementById('nome'), error: document.getElementById('erro-nome') },
-  email: { input: document.getElementById('email'), error: document.getElementById('erro-email') },
-  aceite: {
-    input: document.getElementById('aceite'),
-    error: document.getElementById('erro-aceite'),
-  },
-};
+if (form) {
+  const feedback = document.getElementById('form-feedback');
 
-function setError(field, message) {
-  field.error.textContent = message;
-  field.input.setAttribute('aria-invalid', message ? 'true' : 'false');
-}
+  const fields = {
+    nome: { input: document.getElementById('nome'), error: document.getElementById('erro-nome') },
+    email: {
+      input: document.getElementById('email'),
+      error: document.getElementById('erro-email'),
+    },
+    aceite: {
+      input: document.getElementById('aceite'),
+      error: document.getElementById('erro-aceite'),
+    },
+  };
 
-function validate() {
-  const errors = [];
-
-  const nome = fields.nome.input.value.trim();
-  setError(fields.nome, nome.length >= 2 ? '' : 'Informe seu nome.');
-  if (nome.length < 2) errors.push(fields.nome);
-
-  const email = fields.email.input.value.trim();
-  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
-  setError(fields.email, emailOk ? '' : 'Informe um e-mail válido.');
-  if (!emailOk) errors.push(fields.email);
-
-  const aceite = fields.aceite.input.checked;
-  setError(fields.aceite, aceite ? '' : 'É preciso aceitar para participar do sorteio.');
-  if (!aceite) errors.push(fields.aceite);
-
-  return errors;
-}
-
-function showSuccess(nome) {
-  form.hidden = true;
-  feedback.innerHTML = '';
-  const box = document.createElement('p');
-  box.className = 'form-success';
-  box.textContent = `🎉 Prontinho, ${nome}! Você está na lista e concorrendo ao kit de camping. Fique de olho no seu e-mail.`;
-  feedback.appendChild(box);
-  box.setAttribute('tabindex', '-1');
-  box.focus();
-}
-
-form.addEventListener('submit', async (event) => {
-  event.preventDefault();
-
-  const errors = validate();
-  if (errors.length) {
-    errors[0].input.focus();
-    return;
+  function setError(field, message) {
+    field.error.textContent = message;
+    field.input.setAttribute('aria-invalid', message ? 'true' : 'false');
   }
 
-  const nome = fields.nome.input.value.trim();
-  const email = fields.email.input.value.trim();
+  function validate() {
+    const errors = [];
 
-  if (!FORM_ENDPOINT) {
-    // Sem backend configurado: abre o cliente de e-mail do visitante.
-    const assunto = encodeURIComponent('Quero participar do sorteio de inauguração');
-    const corpo = encodeURIComponent(`Nome: ${nome}\nE-mail: ${email}`);
-    window.location.href = `mailto:${FALLBACK_EMAIL}?subject=${assunto}&body=${corpo}`;
-    showSuccess(nome);
-    return;
+    const nome = fields.nome.input.value.trim();
+    setError(fields.nome, nome.length >= 2 ? '' : 'Informe seu nome.');
+    if (nome.length < 2) errors.push(fields.nome);
+
+    const email = fields.email.input.value.trim();
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+    setError(fields.email, emailOk ? '' : 'Informe um e-mail válido.');
+    if (!emailOk) errors.push(fields.email);
+
+    const aceite = fields.aceite.input.checked;
+    setError(fields.aceite, aceite ? '' : 'É preciso aceitar para participar do sorteio.');
+    if (!aceite) errors.push(fields.aceite);
+
+    return errors;
   }
 
-  const button = form.querySelector('button[type="submit"]');
-  button.disabled = true;
-  button.textContent = 'Enviando...';
-
-  try {
-    const response = await fetch(FORM_ENDPOINT, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify({ nome, email }),
-    });
-    if (!response.ok) throw new Error('Falha no envio');
-    showSuccess(nome);
-  } catch {
-    button.disabled = false;
-    button.textContent = 'Quero concorrer ao kit 🎒';
-    setError(fields.email, 'Não conseguimos enviar agora. Tente novamente em instantes.');
-    fields.email.input.focus();
+  function showSuccess(nome) {
+    form.hidden = true;
+    feedback.innerHTML = '';
+    const box = document.createElement('p');
+    box.className = 'form-success';
+    box.textContent = `🎉 Prontinho, ${nome}! Você está na lista e concorrendo ao kit de camping. Fique de olho no seu e-mail.`;
+    feedback.appendChild(box);
+    box.setAttribute('tabindex', '-1');
+    box.focus();
   }
-});
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const errors = validate();
+    if (errors.length) {
+      errors[0].input.focus();
+      return;
+    }
+
+    const nome = fields.nome.input.value.trim();
+    const email = fields.email.input.value.trim();
+
+    if (!FORM_ENDPOINT) {
+      // Sem backend configurado: abre o cliente de e-mail do visitante.
+      const assunto = encodeURIComponent('Quero participar do sorteio de inauguração');
+      const corpo = encodeURIComponent(`Nome: ${nome}\nE-mail: ${email}`);
+      window.location.href = `mailto:${FALLBACK_EMAIL}?subject=${assunto}&body=${corpo}`;
+      showSuccess(nome);
+      return;
+    }
+
+    const button = form.querySelector('button[type="submit"]');
+    button.disabled = true;
+    button.textContent = 'Enviando...';
+
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ nome, email }),
+      });
+      if (!response.ok) throw new Error('Falha no envio');
+      showSuccess(nome);
+    } catch {
+      button.disabled = false;
+      button.textContent = 'Quero concorrer ao kit 🎒';
+      setError(fields.email, 'Não conseguimos enviar agora. Tente novamente em instantes.');
+      fields.email.input.focus();
+    }
+  });
+}
 
 /* ------------------------------------------------------- Compartilhamento */
 
@@ -219,20 +234,24 @@ document.querySelectorAll('[data-share]').forEach((button) => {
   });
 });
 
-document.getElementById('copy-link').addEventListener('click', async () => {
-  try {
-    await navigator.clipboard.writeText(SITE_URL);
-    showToast('Link copiado! 🔗');
-  } catch {
-    const helper = document.createElement('input');
-    helper.value = SITE_URL;
-    document.body.appendChild(helper);
-    helper.select();
-    document.execCommand('copy');
-    helper.remove();
-    showToast('Link copiado! 🔗');
-  }
-});
+const copyLink = document.getElementById('copy-link');
+
+if (copyLink) {
+  copyLink.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(SITE_URL);
+      showToast('Link copiado! 🔗');
+    } catch {
+      const helper = document.createElement('input');
+      helper.value = SITE_URL;
+      document.body.appendChild(helper);
+      helper.select();
+      document.execCommand('copy');
+      helper.remove();
+      showToast('Link copiado! 🔗');
+    }
+  });
+}
 
 /* ------------------------------------------------------------- Revelação */
 
